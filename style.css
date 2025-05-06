@@ -1,0 +1,153 @@
+:root{
+    --mainColor:#9361F5
+}
+*{
+ margin: 0;
+ box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    overflow-x: hidden;
+    list-style: none;
+}
+body{
+    background-color: var(--mainColor);
+    font-family: "Poppins", sans-serif;
+
+}
+.mybtn{
+    border: 2px solid var(--mainColor);
+    border-radius: 4px;
+    transition:  background-color .5s;
+}
+.mybtn:hover{
+    background-color: var(--mainColor);
+}
+.myinput:focus{
+    border: 2px solid var(--mainColor);
+    box-shadow: 0 0 0 1px var(--mainColor);
+}
+
+.myspan {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 5px;
+    background-color: rgba(255, 0, 0, 0.397);
+    height: 50px;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+    
+}
+.trash{
+color: var(--mainColor);
+font-size: 20px;
+cursor: pointer;
+
+}
+.title{
+    cursor: pointer;
+}
+.check{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border:  2px solid cyan;
+    color: black;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color .3s;
+}
+.check:hover {
+    background-color: cyan;
+
+}
+.title::after{
+    content: "Click to complete";
+    font-size: 13px;
+    text-wrap:nowrap;
+    position: absolute;
+    top: 90%; 
+    left: 0;
+    height: fit-content;
+    padding: 2px;
+opacity: 0;
+    background-color: black;
+    color: white;
+    transition: opacity .3s;
+    cursor: default;
+
+}
+.title:hover::after{
+    opacity:1;
+}
+.completed {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px; 
+
+}
+.title.completed:hover::after {
+    content: none;
+}
+.loader-container{
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+    #progressbar{
+        height: 10px; 
+        background-color: black;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    #progressbar #progress{
+        height: inherit;
+        background-color: #9261f5;
+        width: 0%;
+        transition: width .5s;
+    }
+    .number{
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #9261f5;
+        color: #FFF;
+    }
+    @media  screen and (max-width:800px) {
+
+     .w-50{
+        width: 100% !important;
+
+     }
+    }
